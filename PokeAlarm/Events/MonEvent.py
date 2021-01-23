@@ -338,6 +338,17 @@ class MonEvent(BaseEvent):
             'costume_id_2': "{:02d}".format(self.costume_id),
             'costume_id_3': "{:03d}".format(self.costume_id),
 
+            # TiM-Extras! SP[Value with 1 Leading Space] and NN[NotNormal: Ignore Normal Forms]
+            'form_sp_or_empty': (
+                "" if form_name == "unknown"
+                else " {}".format(form_name)),
+            'form_nn_sp_or_empty': (
+                "" if form_name in ["unknown", "Normal", "Normale"]
+                else " {}".format(form_name)),
+            'costume_sp_or_empty': (
+                "" if costume_name == "unknown"
+                else " {}".format(costume_name)),
+
             # Quick Move
             'quick_move': locale.get_move_name(self.quick_id),
             'quick_id': self.quick_id,
