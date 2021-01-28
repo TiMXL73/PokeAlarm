@@ -431,14 +431,13 @@ def get_ex_eligible_emoji(ex_eligible):
 # Returns a String link to Google Maps Pin at the location
 def get_gmaps_link(lat, lng):
     latlng = '{:5f},{:5f}'.format(lat, lng)
-    return 'http://maps.google.com/maps?q={}'.format(latlng)
+    return 'https://www.google.com/maps/search/?api=1&query={}'.format(latlng)
 
 
 # Returns a String link to Apple Maps Pin at the location
 def get_applemaps_link(lat, lng):
     latlng = '{:5f},{:5f}'.format(lat, lng)
-    return 'http://maps.apple.com/maps?' \
-           + 'daddr={}&z=10&t=s&dirflg=w'.format(latlng)
+    return 'https://maps.apple.com/maps?daddr={}'.format(latlng)
 
 
 # Returns a String link to Waze Maps Navigation at the location
